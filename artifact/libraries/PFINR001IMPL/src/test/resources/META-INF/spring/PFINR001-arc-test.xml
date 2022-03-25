@@ -9,4 +9,6 @@
 		</constructor-arg>
 	</bean>
 	<bean id="jdbcUtilsFactory" class="com.bbva.pfin.lib.r001.factory.JdbcUtilsFactory"/>
+	<bean id="interBackendConnectionUtilsFactory" class="com.bbva.pfin.lib.r001.factory.InterBackendConnectionUtilsFactoryTest"/>
+	<bean id="apiConnectorFactoryImpl" class="com.bbva.pfin.lib.r001.factory.ApiConnectorFactoryTest"/>
 </beans>

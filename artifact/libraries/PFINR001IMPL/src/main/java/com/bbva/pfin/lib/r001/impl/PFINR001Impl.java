@@ -11,6 +11,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import com.bbva.apx.exception.db.NoResultException;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * The PFINR001Impl class...
@@ -24,33 +25,47 @@ public class PFINR001Impl extends PFINR001Abstract {
 	 */
 	@Override
 	public List<Cliente> execute() {
-		return null;
+		List<Cliente> listDTO = new ArrayList<>();
+
+		Cliente cliente = new Cliente();
+
+		listDTO.add(cliente);
+
+		return listDTO;
 	}
 
 	@Override
 	public List<Cliente> executeGetClienteByRfc(String rfc) {
 		List<Cliente> listDTO = new ArrayList<>();
-		if (StringUtils.isBlank(rfc)){
+
+		if (StringUtils.isBlank(rfc))
+		{
 			this.addAdvice("PFIN00000001");
-		} else {
+		}
+		else
+		{
 			Cliente clienteDTO = null;
+
 			String type = this.applicationConfigurationService.getDefaultProperty("type.find", "hardcode");
 			LOGGER.error("type.find {}", type);
-			switch (type) {
-				case "jdbc":
-					clienteDTO = this.getClienteDTOFromJDBC(rfc);
-					break;
+
+			if(Objects.equals(type, "jdbc"))
+			{
+				clienteDTO = this.getClienteDTOFromJDBC(rfc);
 			}
-			if (clienteDTO != null) {
+			if(clienteDTO != null)
+			{
 				listDTO.add(clienteDTO);
 			}
+
 		}
 		return listDTO;
 	}
 
 	private Cliente getClienteDTOFromJDBC(String rfc)
 	{
-		LOGGER.info("getClienteDTOFromJDBC({}, {})", rfc);
+		LOGGER.info("getClienteDTOFromJDBC({})", rfc);
+
 		Cliente clienteDTO = null;
 		Map<String, Object> mapClienteDTO;
 		try {

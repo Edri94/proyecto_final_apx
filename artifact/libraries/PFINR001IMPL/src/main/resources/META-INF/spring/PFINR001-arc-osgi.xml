@@ -4,4 +4,6 @@
 	<osgi:service id="pfinR001Osgi" ref="pfinR001" interface="com.bbva.pfin.lib.r001.PFINR001"/>
 	<osgi:reference id="applicationConfigurationServiceFactory" bean-name="applicationConfigurationServiceFactory" interface="com.bbva.elara.configuration.manager.application.factory.ApplicationConfigurationServiceFactory"/>
 	<osgi:reference id="jdbcUtilsFactory" bean-name="jdbcUtilsFactory" interface="com.bbva.elara.utility.jdbc.connector.factory.JdbcUtilsFactory"/>
+	<osgi:reference id="interBackendConnectionUtilsFactory" bean-name="interBackendConnectionUtilsFactory" interface="com.bbva.elara.utility.interbackend.factory.InterBackendConnectionUtilsFactory"/>
+	<osgi:reference id="apiConnectorFactoryImpl" bean-name="apiConnectorFactoryImpl" interface="com.bbva.elara.utility.api.connector.APIConnectorFactory"/>
 </beans>

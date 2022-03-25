@@ -5,11 +5,23 @@
 	<bean id="pfinR001Abstract" abstract="true" class="com.bbva.pfin.lib.r001.impl.PFINR001Abstract">
 		<property name="applicationConfigurationService" ref="applicationConfigurationService"/>
 		<property name="jdbcUtils" ref="jdbcUtils"/>
+		<property name="interBackendConnectionUtils" ref="interBackendConnectionUtils"/>
+		<property name="internalApiConnector" ref="internalApiConnector"/>
+		<property name="apiConnectorBuilder" ref="apiConnectorBuilder"/>
 	</bean>
 	<bean id="applicationConfigurationService" factory-bean="applicationConfigurationServiceFactory" factory-method="getApplicationConfigurationService">
 		<constructor-arg type="org.osgi.framework.BundleContext" ref="bundleContext"/>
 	</bean>
 	<bean id="jdbcUtils" factory-bean="jdbcUtilsFactory" factory-method="getJdbcUtils">
 		<constructor-arg type="org.osgi.framework.BundleContext" ref="bundleContext"/>
+	</bean>
+	<bean id="interBackendConnectionUtils" factory-bean="interBackendConnectionUtilsFactory" factory-method="getInterBackendUtility">
+		<constructor-arg type="org.osgi.framework.BundleContext" ref="bundleContext"/>
+	</bean>
+	<bean id="internalApiConnector" factory-bean="apiConnectorFactoryImpl" factory-method="getAPIConnector">
+		<constructor-arg index="0" type="org.osgi.framework.BundleContext" ref="bundleContext"/>
+	</bean>
+	<bean id="apiConnectorBuilder" factory-bean="apiConnectorFactoryImpl" factory-method="getAPIConnectorBuilder">
+		<constructor-arg index="0" type="org.osgi.framework.BundleContext" ref="bundleContext"/>
 	</bean>
 </beans>
