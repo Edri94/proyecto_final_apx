@@ -12,5 +12,8 @@
 	<version>0.0.0</version>
 	<packaging>pom</packaging>
 	<name>LIBRARIES-ProyectoFinal</name>
-	<modules/>
+	<modules>
+		<module>PFINR001</module>
+		<module>PFINR001IMPL</module>
+	</modules>
 </project>
