@@ -21,6 +21,41 @@ public abstract class AbstractPFINT00101MXTransaction extends AbstractTransactio
 	}
 
 	/**
+	 * Return value for input parameter CURP
+	 */
+	protected String getCurp(){
+		return (String)this.getParameter("CURP");
+	}
+
+	/**
+	 * Return value for input parameter NOMBRE
+	 */
+	protected String getNombre(){
+		return (String)this.getParameter("NOMBRE");
+	}
+
+	/**
+	 * Return value for input parameter APELLIDOPATERNO
+	 */
+	protected String getApellidopaterno(){
+		return (String)this.getParameter("APELLIDOPATERNO");
+	}
+
+	/**
+	 * Return value for input parameter APELLIDOMATERNO
+	 */
+	protected String getApellidomaterno(){
+		return (String)this.getParameter("APELLIDOMATERNO");
+	}
+
+	/**
+	 * Return value for input parameter TELEFONO
+	 */
+	protected String getTelefono(){
+		return (String)this.getParameter("TELEFONO");
+	}
+
+	/**
 	 * Set value for List<Cliente> output parameter EntityList
 	 */
 	protected void setEntitylist(final List<Cliente> field){

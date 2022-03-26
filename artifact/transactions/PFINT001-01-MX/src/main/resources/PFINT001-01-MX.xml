@@ -2,6 +2,11 @@
 <transaction xmlns="http://www.w3schools.com" transactionName="PFINT001" application="PFIN" version="01" country="MX" language="ES">
 	<paramsIn>
 		<parameter order="1" name="rfc" mandatory="0" type="String" size="13"/>
+		<parameter order="2" name="CURP" mandatory="0" type="String" size="18"/>
+		<parameter order="3" name="NOMBRE" mandatory="0" type="String" size="50"/>
+		<parameter order="4" name="APELLIDOPATERNO" mandatory="0" type="String" size="50"/>
+		<parameter order="5" name="APELLIDOMATERNO" mandatory="0" type="String" size="50"/>
+		<parameter order="6" name="TELEFONO" mandatory="0" type="String" size="12"/>
 	</paramsIn>
 	<paramsOut>
 		<list order="1" name="EntityList" mandatory="0">
