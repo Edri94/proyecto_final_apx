@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<transaction xmlns="http://www.w3schools.com" transactionName="PFINT001" application="PFIN" version="01" country="MX" language="ES">
+	<paramsIn>
+		<parameter order="1" name="rfc" mandatory="0" type="String" size="13"/>
+	</paramsIn>
+	<paramsOut>
+		<list order="1" name="EntityList" mandatory="0">
+			<dto order="1" name="Type" mandatory="0" package="com.bbva.pfin.dto.clientes.Cliente" artifactId="PFINC001">
+				<parameter order="1" name="idcliente" mandatory="1" type="Long" size="11"/>
+				<parameter order="2" name="NOMBRE" mandatory="1" type="String" size="50"/>
+				<parameter order="3" name="APELLIDOPATERNO" mandatory="1" type="String" size="50"/>
+				<parameter order="4" name="APELLIDOMATERNO" mandatory="1" type="String" size="50"/>
+				<parameter order="5" name="RFC" mandatory="1" type="String" size="13"/>
+				<parameter order="6" name="CURP" mandatory="1" type="String" size="18"/>
+				<parameter order="7" name="TELEFONO" mandatory="1" type="String" size="12"/>
+			</dto>
+		</list>
+	</paramsOut>
+	<description>transaccion para proyecto final</description>
+</transaction>

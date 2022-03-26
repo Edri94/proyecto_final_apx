@@ -14,12 +14,21 @@ public class Cliente implements Serializable
 {
 	private static final long serialVersionUID = 2931699728946643245L;
 
+	private int idcliente;
 	private String nombre;
 	private String apellidopaterno;
 	private String apellidomaterno;
 	private String rfc;
 	private String curp;
 	private String telefono;
+
+	public int getIdcliente() {
+		return idcliente;
+	}
+
+	public void setIdcliente(int idcliente) {
+		this.idcliente = idcliente;
+	}
 
 	public String getNombre() {
 		return nombre;
@@ -70,27 +79,28 @@ public class Cliente implements Serializable
 	}
 
 	@Override
-	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (o == null || getClass() != o.getClass()) return false;
-		Cliente cliente = (Cliente) o;
-		return Objects.equals(nombre, cliente.nombre) && Objects.equals(apellidopaterno, cliente.apellidopaterno) && Objects.equals(apellidomaterno, cliente.apellidomaterno) && Objects.equals(rfc, cliente.rfc) && Objects.equals(curp, cliente.curp) && Objects.equals(telefono, cliente.telefono);
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(nombre, apellidopaterno, apellidomaterno, rfc, curp, telefono);
-	}
-
-	@Override
 	public String toString() {
 		return "Cliente{" +
-				"nombre='" + nombre + '\'' +
+				"idcliente=" + idcliente +
+				", nombre='" + nombre + '\'' +
 				", apellidopaterno='" + apellidopaterno + '\'' +
 				", apellidomaterno='" + apellidomaterno + '\'' +
 				", rfc='" + rfc + '\'' +
 				", curp='" + curp + '\'' +
 				", telefono='" + telefono + '\'' +
 				'}';
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Cliente cliente = (Cliente) o;
+		return idcliente == cliente.idcliente && nombre.equals(cliente.nombre) && apellidopaterno.equals(cliente.apellidopaterno) && apellidomaterno.equals(cliente.apellidomaterno) && rfc.equals(cliente.rfc) && curp.equals(cliente.curp) && telefono.equals(cliente.telefono);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(idcliente, nombre, apellidopaterno, apellidomaterno, rfc, curp, telefono);
 	}
 }

@@ -12,5 +12,7 @@
 	<version>0.0.0</version>
 	<packaging>pom</packaging>
 	<name>TRANSACTIONS-ProyectoFinal</name>
-	<modules/>
+	<modules>
+		<module>PFINT001-01-MX</module>
+	</modules>
 </project>

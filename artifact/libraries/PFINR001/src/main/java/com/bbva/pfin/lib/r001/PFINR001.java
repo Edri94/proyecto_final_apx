@@ -13,5 +13,8 @@ public interface PFINR001 {
 	 */
 	List<Cliente> execute();
 	List<Cliente> executeGetClienteByRfc(String rfc);
+	int executeActualizaCliente(Cliente cliente);
+	int executeBorraCliente(Cliente cliente);
+	int executeRegistraCliente(Cliente cliente);
 
 }

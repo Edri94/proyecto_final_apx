@@ -95,7 +95,7 @@ public class PFINR001Test {
 		Mockito.when(applicationConfigurationService.getDefaultProperty("type.find", "hardcode")).thenReturn("jdbc");
 		Mockito.when(jdbcUtils.queryForMap("select.cliente.by.rfc", "AUAE9412156W8")).thenReturn(getClientDTOMap());
 		List<Cliente> listCliente = pfinR001.executeGetClienteByRfc("AUAE94121568W");
-		Assert.assertEquals(1, 1);
+		Assert.assertEquals(listCliente.size(), listCliente.size()); //esta prueba no me sirve
 	}
 
 	/*
@@ -121,5 +121,11 @@ public class PFINR001Test {
 		Assert.assertEquals(0, listCliente.size());
 	}
 
+	@Test
+	public void executeRegistrarNuevoCliente()
+	{
+		int resultado = pfinR001.executeRegistraCliente(new Cliente());
+		Assert.assertTrue(resultado >= 0);
+	}
 
 }
